@@ -21,3 +21,13 @@ for i in text:
     index_list += 1
 
 print(" ".join(text))
+
+#Задание 2 решение 2
+
+index_list = 0
+for i in text:
+    if i.isdigit():
+        text[index_list] = lambda i: ('0' + i) if len(i) == 1 else i
+    index_list += 1
+
+print(" ".join(text))
