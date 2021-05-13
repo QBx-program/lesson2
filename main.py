@@ -31,3 +31,8 @@ for i in text:
     index_list += 1
 
 print(" ".join(text))
+
+#Задание 2 решение 3
+
+text = list(i for i in text if (lambda i: ('0' + i) if len(i) == 1 else i))
+print(" ".join(text))
