@@ -2,37 +2,15 @@
 
 #Задание 1 Выяснить тип
 
-print(type(15 * 3))
-print(type(15 / 3))
-print(type(15 // 2))
-print(type(15 ** 2))
+type_print = [15 * 3, 15 / 3, 15 // 2, 15 **2]
+for i in type_print:
+    print(type(i))
 
 #Задание 2 Работа со списком
+text = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+7', 'градусов']
 
-text = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
-
-index_list = 0
-for i in text:
-    if i.isdigit():
-        if len(i) < 2:
-            text[index_list] = '"0' + i +'"'
-        else:
-            text[index_list] = '"' + i + '"'
-    index_list += 1
-
+for n, char_s in enumerate(text):
+    text[n] = lambda p: f'"0{p}"' if p.isdigit() and len(p) == 1 else f'"{p[0]}0{p[1:]}"' if (p.isdigit() and len(p) > 1) or p[0] == '+' else p
+    text[n] = text[n](char_s)
 print(" ".join(text))
 
-#Задание 2 решение 2
-
-index_list = 0
-for i in text:
-    if i.isdigit():
-        text[index_list] = lambda i: ('0' + i) if len(i) == 1 else i
-    index_list += 1
-
-print(" ".join(text))
-
-#Задание 2 решение 3
-
-text = list(i for i in text if (lambda i: ('0' + i) if len(i) == 1 else i))
-print(" ".join(text))
