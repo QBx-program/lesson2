@@ -18,3 +18,32 @@ print(" ".join(text))
 works = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
 for i, n in enumerate(works):
     print(f'Привет, {list(reversed(list(works[i].split(" "))))[0].capitalize()}')
+a = 97.2
+
+#Задание 5 со звездочками
+
+def format_price(price):
+    text_price = ''
+    text_max = []
+    for i, pr in enumerate(price):
+        price_t = lambda b: '00' if int(b[0]) == 0 else f'0{b[0]}' if int(b[0]) < 10 and int(b[0]) != 0 else b[0]
+        rub = str(int(pr) // 1)
+        cop = price_t(str(round(float(pr) * 10 % 10, 2) * 10).split('.'))
+        text_price = text_price + '{0}руб.{1}коп., '.format(rub, cop)
+        text_max.append([f'{rub}руб.', f'{cop}коп.'])
+    return text_price, text_max
+
+price = [57.8, 46.51, 97, 77.0, 53.02, 68.01, 91.5]
+print(format_price(price)[0])
+print(format_price(sorted(price))[0])
+price_new = price.copy()
+print(format_price((reversed(sorted(price_new))))[0])
+mp = list(max_price for i, max_price in enumerate(reversed(format_price(reversed(sorted(price_new)))[1][1:6])))
+print(*[f'{f[0]}{f[1]},' for s, f in enumerate([r for r in mp])])
+
+
+
+
+
+
+
