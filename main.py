@@ -14,7 +14,6 @@ print(" ".join(map(lambda p: f'"0{p}"' if p.isdigit() and len(p) == 1 else f'"{p
 works = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
 for i, n in enumerate(works):
     print(f'Привет, {list(reversed(list(works[i].split(" "))))[0].capitalize()}')
-a = 97.2
 
 #Задание 5 со звездочками
 
