@@ -8,11 +8,7 @@ for i in type_print:
 
 #Задание 2-3 Работа со списком
 text = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+7', 'градусов']
-
-for n, char_s in enumerate(text):
-    text[n] = lambda p: f'"0{p}"' if p.isdigit() and len(p) == 1 else f'"{p}"' if p.isdigit() and len(p) > 1 else f'"{p[0]}0{p[1:]}"' if p[0] == '+' else p
-    text[n] = text[n](char_s)
-print(" ".join(text))
+print(" ".join(map(lambda p: f'"0{p}"' if p.isdigit() and len(p) == 1 else f'"{p}"' if p.isdigit() and len(p) > 1 else f'"{p[0]}0{p[1:]}"' if p[0] == '+' else p,text)))
 
 #Задание 4
 works = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
