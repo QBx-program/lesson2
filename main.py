@@ -14,3 +14,7 @@ for n, char_s in enumerate(text):
     text[n] = text[n](char_s)
 print(" ".join(text))
 
+#Задание 4
+works = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
+for i, n in enumerate(works):
+    print(f'Привет, {list(reversed(list(works[i].split(" "))))[0].capitalize()}')
