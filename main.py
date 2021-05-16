@@ -25,7 +25,7 @@ print(format_price(price)[0])
 print(format_price(sorted(price))[0])
 price_new = price.copy()
 print(format_price((reversed(sorted(price_new))))[0])
-mp = list(max_price for i, max_price in enumerate(reversed(format_price(reversed(sorted(price_new)))[1][1:6])))
+mp = list(max_price for i, max_price in enumerate(reversed(format_price(reversed(sorted(price_new)))[1][0:5])))
 print(*[f'{f[0]}{f[1]},' for s, f in enumerate([r for r in mp])])
 
 
